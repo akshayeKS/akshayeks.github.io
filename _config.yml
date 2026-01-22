@@ -1,0 +1,26 @@
+title: Akshaye Kumar Srivastava
+description: ML Infrastructure Engineer - MLOps, vector databases, model serving, and cost optimization
+url: https://akshayeks.github.io
+baseurl: ""
+
+# SEO
+permalink: /blog/:title/
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Author info (used by jekyll-seo-tag)
+author:
+  name: Akshaye Kumar Srivastava
+  email: akshayesrivastava@gmail.com
+  twitter: # add if you have one
+
+# Social links
+social:
+  name: Akshaye Kumar Srivastava
+  links:
+    - https://github.com/akshayeks
+    - https://www.linkedin.com/in/akshaye-kumar-srivastava-0093a7116/
+
+# Build settings
+markdown: kramdown
