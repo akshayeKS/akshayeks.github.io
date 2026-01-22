@@ -1,9 +1,9 @@
-/* Bale Blue Background */
+/* Soothing Light Blue */
 :root {
-  --bg-color: #AFEEEE;
-  --text-color: #1a1a1a;
-  --link-color: #0066cc;
-  --code-bg: #e0f7f7;
+  --bg-color: #F0FFFF;
+  --text-color: #2a2a2a;
+  --link-color: #0077aa;
+  --code-bg: #f5fefe;
 }
 
 * {
