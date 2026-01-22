@@ -20,6 +20,8 @@ Previously built a serverless vector search solution that [cut AWS costs by 70%]
 
 **[py-package-resolver](https://github.com/akshayeKS/py-package-resolver)** — Python package dependency analyzer
 
+**[excaludreaw](https://github.com/akshayeKS/excaludreaw)** — Excalidraw experiments
+
 **[clauderaw](https://github.com/akshayeKS/clauderaw)** — *Coming soon*
 
 ---
