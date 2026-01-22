@@ -6,11 +6,13 @@ description: I build ML infrastructure that scales — vector databases, model s
 
 # Akshaye Kumar Srivastava
 
-**ML Infrastructure Engineer**
+**Builder. Problem Solver.**
 
-I build systems that make machine learning work in production — vector databases, model serving, data pipelines. I focus on infrastructure that scales without breaking the bank.
+I build and share in the data and ML domain — vector databases, model serving, data pipelines. Observations from the trenches of making ML work in production.
 
-Currently working on ML and data platform engineering. Previously built a serverless vector search solution that [cut AWS costs by 70%](/blog/serverless-vector-db/).
+> *"It ain't what you don't know that gets you into trouble. It's what you know for sure that just ain't so."*
+
+Previously built a serverless vector search solution that [cut AWS costs by 70%](/blog/serverless-vector-db/).
 
 ---
 

@@ -6,13 +6,17 @@ description: ML Infrastructure Engineer with experience in vector databases, mod
 
 # About
 
-I'm an ML Infrastructure Engineer focused on building systems that make machine learning work reliably in production.
+Builder. Problem solver. I build and share observations from the data and ML domain.
+
+> *"It ain't what you don't know that gets you into trouble. It's what you know for sure that just ain't so."*
+
+This quote shapes how I approach engineering — question assumptions, validate what you think you know, and stay humble about complexity.
 
 ## What I Do
 
-- **ML Infrastructure** — Vector databases, model serving, feature stores
-- **Data Platforms** — Pipelines, orchestration, data quality
-- **Cost Optimization** — Making ML infrastructure economically viable
+- **Build** — ML infrastructure, vector databases, model serving, data pipelines
+- **Solve** — Performance problems, cost optimization, scaling challenges
+- **Share** — Observations and learnings from production systems
 
 ## Technical Focus
 
@@ -22,7 +26,6 @@ I'm an ML Infrastructure Engineer focused on building systems that make machine 
 
 ## Experience
 
-<!-- TODO: Add specific companies and years -->
 Currently working in ML and Data Platform engineering, building infrastructure that handles millions of vectors and serves real-time inference at scale.
 
 ---
