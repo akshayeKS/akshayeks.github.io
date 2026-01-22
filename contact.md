@@ -6,25 +6,23 @@ description: Get in touch for ML infrastructure projects, consulting, or job opp
 
 # Contact
 
-## 💼 Looking to hire?
+## ☕ Let's chat
 
-I'm open to full-time opportunities in ML infrastructure, data platform engineering, and MLOps.
+Building in data/AI? Founders, builders, curious minds — I'm always up for conversations.
 
-**Email:** [akshayesrivastava@gmail.com](mailto:akshayesrivastava@gmail.com)
+**[Grab 22 mins →](https://cal.com/akshaye-kr-srivastava-ahog3c/22-min)**
 
 ---
 
-## 🤝 Need ML infra help?
+## 📧 Email
 
-If you're building vector search, model serving, or data pipelines and want to chat about architecture — let's connect.
-
-**LinkedIn:** [linkedin.com/in/akshaye-kumar-srivastava](https://www.linkedin.com/in/akshaye-kumar-srivastava-0093a7116/)
+**[akshayesrivastava@gmail.com](mailto:akshayesrivastava@gmail.com)**
 
 ---
 
 ## 🔗 Elsewhere
 
-- [GitHub](https://github.com/akshayeks)
+- [GitHub](https://github.com/akshayeKS)
 - [LinkedIn](https://www.linkedin.com/in/akshaye-kumar-srivastava-0093a7116/)
 
 ---

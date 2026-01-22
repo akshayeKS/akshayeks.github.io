@@ -10,6 +10,8 @@ I build. I solve. Exploring the data & AI space.
 
 > *"It ain't what you don't know that gets you into trouble. It's what you know for sure that just ain't so."*
 
+Building in data/AI? [Let's chat →](https://cal.com/akshaye-kr-srivastava-ahog3c/22-min)
+
 ---
 
 [Work](/work) ・ [Blog](/blog) ・ [About](/about) ・ [Contact](/contact)
