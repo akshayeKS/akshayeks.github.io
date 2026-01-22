@@ -22,8 +22,6 @@ Previously built a serverless vector search solution that [cut AWS costs by 70%]
 
 **[excaludreaw](https://github.com/akshayeKS/excaludreaw)** — Excalidraw experiments
 
-**[clauderaw](https://github.com/akshayeKS/clauderaw)** — *Coming soon*
-
 ---
 
 [Work](/work) ・ [Blog](/blog) ・ [About](/about) ・ [Contact](/contact)
