@@ -16,6 +16,14 @@ Previously built a serverless vector search solution that [cut AWS costs by 70%]
 
 ---
 
+## 🔨 What I'm Building
+
+**[py-package-resolver](https://github.com/akshayeKS/py-package-resolver)** — Python package dependency analyzer
+
+**[clauderaw](https://github.com/akshayeKS/clauderaw)** — *Coming soon*
+
+---
+
 [Work](/work) ・ [Blog](/blog) ・ [About](/about) ・ [Contact](/contact)
 
 ---
