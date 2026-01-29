@@ -17,6 +17,11 @@ Technical writeups on ML infrastructure, cost optimization, and lessons from pro
 
 Building the missing layer between AI agents and production reality—durability, human oversight, and observability on top of the Airflow infrastructure you already run.
 
+**[Building Production-Ready Migration Agents with Claude Code](/blog/agentic-migration/)** 🤖
+*January 2026*
+
+A deep dive into designing agentic systems for complex, multi-phase infrastructure migrations—with lessons from orchestrating 66 Airflow clusters using Claude Code skills, state persistence, and human-in-the-loop checkpoints.
+
 ---
 
 ## 2025
@@ -38,13 +43,6 @@ A deep dive into building an on-demand vector search solution using FAISS, Apach
 ---
 
 ## Coming Soon
-
-**Agentic Migration: Moving Systems with AI Agents** 🤖
-*In progress — waiting for Claude to cool down*
-
-How we used AI agents to automate a complex system migration. Lessons learned, what worked, what didn't.
-
----
 
 **0 to -1: Engineering Observations** 🔍
 *Brewing*
