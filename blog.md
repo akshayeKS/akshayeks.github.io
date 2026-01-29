@@ -10,6 +10,15 @@ Technical writeups on ML infrastructure, cost optimization, and lessons from pro
 
 ---
 
+## 2026
+
+**[Airbox: Durable Infrastructure for AI Agents on Your Existing Airflow](/blog/airbox/)** 🚀
+*January 2026 — Currently Building*
+
+Building the missing layer between AI agents and production reality—durability, human oversight, and observability on top of the Airflow infrastructure you already run.
+
+---
+
 ## 2025
 
 **[Building High-Performing Engineering Teams: Lessons from Football](/blog/high-performing-teams/)** ⚽
