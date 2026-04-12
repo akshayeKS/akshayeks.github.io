@@ -12,6 +12,11 @@ Technical writeups on ML infrastructure, cost optimization, and lessons from pro
 
 ## 2026
 
+**[callwiki: A Tool to Help Founders Stay Closer to Customers](/blog/callwiki/)** 🧠
+*April 2026*
+
+We all do the customer calls. The patterns across those calls shouldn't get lost. Inspired by Karpathy's LLM knowledge wiki idea — I built an open-source tool to help fellow founders surface what their customers are actually telling them.
+
 **[Airbox: Durable Infrastructure for AI Agents on Your Existing Airflow](/blog/airbox/)** 🚀
 *January 2026 — Currently Building*
 
