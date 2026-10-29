@@ -2,7 +2,7 @@
 layout: default
 title: "bowerbird: Turn a Slide Deck into a Narrated Video, in Your Own Voice"
 date: 2026-10-29
-description: "A small internal tool I built for myself: write the script, set the length, and get a narrated deck video in your own cloned voice — fully local, no recording sessions, no editing."
+description: "A small internal tool for endless pitching: write the script, set the length, and get a narrated deck video in your own cloned voice — so you can fail fast, fail often, and ship the next version the same day."
 tags: [tools, video, voice-cloning, local-first, founders]
 categories: [product, tools]
 ---
@@ -15,11 +15,13 @@ categories: [product, tools]
 
 ## Who It's For
 
-People who regularly explain things with slides and need to send that explanation as a video:
+People who pitch constantly and need each pitch to go out as a video:
 
-- **Founders** sending investor updates or product walkthroughs to people who couldn't make the call
-- **Engineers and PMs** recording design reviews, demos, or async project updates
-- **Anyone** who has a deck ready and just needs a clear, short narrated version of it
+- **Founders** pitching an idea, a product, or a new angle — over and over, to different audiences
+- **Engineers and PMs** pitching a design, a proposal, or a demo to people who weren't in the room
+- **Anyone** testing which version of a story actually lands
+
+The way to find the pitch that works is to fail fast and fail often: make one, send it, see what lands, change it, send the next one. That only works if each version is cheap to make.
 
 If your video is really *a deck plus a clear explanation*, this is for you. If you need B-roll, cuts to camera, or anything cinematic, it isn't.
 
@@ -27,14 +29,14 @@ If your video is really *a deck plus a clear explanation*, this is for you. If y
 
 ## The Problem
 
-The deck is usually done. Turning it into a video is where the time goes.
+The deck is usually done. Turning it into a video is where the time goes — and when every version costs that much, you make fewer versions.
 
 - **Recording takes many takes.** Getting every slide right in one pass rarely happens. A stumble on slide 9 means starting over, and the retake of slide 3 is often worse than the first.
 - **Fixing it means editing.** Cutting fillers, trimming silences, lining audio up with slide changes. That's a separate skill and a separate app.
 - **Length is a guess.** You aim for three and a half minutes and find out it's six only after recording.
 - **Small changes are expensive.** One updated number on one slide means re-recording, or re-editing, the whole thing.
 
-A few-minute video that people watch once ends up costing an evening.
+A few-minute pitch video ends up costing an evening. Without a faster way, iterating was slow and fewer pitches went out — which means fewer chances to fail, learn, and fix the story.
 
 ---
 
@@ -87,6 +89,8 @@ After each build it re-measures your actual speaking rate, so estimates get more
 bowerbird build --slides 7,12    # redo just these
 bowerbird build --video-only     # adjust pacing, re-render in about a minute
 ```
+
+**More pitches, faster.** A new version of the pitch is a script edit and a rebuild, not a recording session. That's what makes failing fast actually affordable: try a new opening, a different order, a shorter cut — and get it out the same day.
 
 **It doesn't oversell.** If a slide is marked Planned, Roadmap, or Beta, `check` warns when the narration never says so. It's easy to present roadmap as shipped when you're writing to a time limit.
 
