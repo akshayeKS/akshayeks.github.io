@@ -1,48 +1,53 @@
 ---
 layout: default
-title: "bowerbird: Narrated Deck Videos Without the Editing Loop"
+title: "bowerbird: Turn a Slide Deck into a Narrated Video, in Your Own Voice"
 date: 2026-10-29
-description: "I kept going back and forth trying to make every recording crisp. bowerbird turns a slide deck into a narrated video in my own voice — time-boxed, re-recordable per slide, and fully local. Good enough until I'm a full-time video editor."
+description: "A small internal tool I built for myself: write the script, set the length, and get a narrated deck video in your own cloned voice — fully local, no recording sessions, no editing."
 tags: [tools, video, voice-cloning, local-first, founders]
 categories: [product, tools]
 ---
 
-# bowerbird: Narrated Deck Videos Without the Editing Loop
+# bowerbird: Turn a Slide Deck into a Narrated Video, in Your Own Voice
 
-*Time-box it. Record it. Re-record it. Ship it.*
-
----
-
-## The To-and-Fro
-
-I make a lot of short deck videos — product walkthroughs, investor updates, demos for people who can't make the call. Three to five minutes, a handful of slides, me talking over them.
-
-And every single one turned into the same loop:
-
-1. Record the whole thing.
-2. Stumble on slide 6. Say "um" four times on slide 9.
-3. Re-record. Now slide 3 sounds worse than the first take.
-4. Open an editor. Cut, nudge, trim silences, line audio up with slide changes.
-5. Realize it's 6 minutes, not 3:30. Go back to step 1.
-
-The goal was always *crisp*. What I got was an evening gone, for a video people watch once at 1.5x.
-
-I'm not a video editor. I'd love to get good at it someday. But until I'm doing that full time, I needed a setup that does two things: **keeps me inside a time limit** and **lets me redo the one bad part without touching the rest.** With as little gear and as few apps as possible.
+*A small tool I built for myself. Sharing it in case it helps you too.*
 
 ---
 
-## So I Built bowerbird
+## Who It's For
 
-[bowerbird](https://github.com/akshayeKS/bowerbird) turns a slide deck into a narrated video, in your own cloned voice, entirely on your machine.
+People who regularly explain things with slides and need to send that explanation as a video:
 
-The bowerbird builds an elaborate display to present with, and mimics the sounds it hears. That's the whole tool: your deck, your voice.
+- **Founders** sending investor updates or product walkthroughs to people who couldn't make the call
+- **Engineers and PMs** recording design reviews, demos, or async project updates
+- **Anyone** who has a deck ready and just needs a clear, short narrated version of it
+
+If your video is really *a deck plus a clear explanation*, this is for you. If you need B-roll, cuts to camera, or anything cinematic, it isn't.
+
+---
+
+## The Problem
+
+The deck is usually done. Turning it into a video is where the time goes.
+
+- **Recording takes many takes.** Getting every slide right in one pass rarely happens. A stumble on slide 9 means starting over, and the retake of slide 3 is often worse than the first.
+- **Fixing it means editing.** Cutting fillers, trimming silences, lining audio up with slide changes. That's a separate skill and a separate app.
+- **Length is a guess.** You aim for three and a half minutes and find out it's six only after recording.
+- **Small changes are expensive.** One updated number on one slide means re-recording, or re-editing, the whole thing.
+
+A few-minute video that people watch once ends up costing an evening.
+
+---
+
+## What bowerbird Does
+
+[bowerbird](https://github.com/akshayeKS/bowerbird) takes your slide deck and a written script and produces a narrated video in your own cloned voice, entirely on your machine.
 
 ```
 deck.pdf / .pptx / .html ──┐
                            ├── bowerbird init ──> slides/*.png + script.json
  target length (3:30) ─────┘
                                       │
-                         ✎ you write the narration     ← the part that matters
+                         ✎ you write the narration
                                       │
  samples/*.wav ── bowerbird voice ──> cloned profile
                                       │
@@ -51,79 +56,51 @@ deck.pdf / .pptx / .html ──┐
 ```
 
 ```bash
-bowerbird init deck.pdf --target 3:30   # rasterize slides, scaffold script.json
-bowerbird draft                         # prompt to draft narration with any LLM
-bowerbird voice                         # clone your voice from a few samples
+bowerbird init deck.pdf --target 3:30   # slides to images, script.json scaffold
+bowerbird draft                         # optional: prompt to draft narration with any LLM
+bowerbird voice                         # clone your voice from a few short samples
 bowerbird check                         # tools, voice, script, and length vs target
 bowerbird build                         # -> deck.mp4
 ```
 
-The minimalist setup: a laptop, 3–6 voice samples of 20–30 seconds each recorded in a quiet room, ffmpeg, and a local [Voicebox](https://voicebox.sh) install. No mic rig, no timeline editor, no retakes of the whole thing.
+You record your voice once — a few 20–30 second samples — and after that every video is just text.
 
 ---
 
-## Why This Instead of Just Recording
+## How It Addresses Each Pain
 
-### The script is the product
+**No takes.** The narration lives in one file, `script.json`, one entry per slide. You fix a sentence by editing text, not by performing it again.
 
-When I record live, the words, the delivery, and the timing all have to be right at the same moment. That's why it takes ten takes.
+**No editing.** Pacing is a number per slide (`gap_after`, in seconds). Silence trimming, loudness, and syncing audio to slides are handled for you, and slide timings are checked against the final audio so nothing drifts.
 
-bowerbird separates them. Everything is plumbing around one editable file — `script.json`, one entry per slide. Fix a sentence by editing text, not by re-performing it. Every "um" I used to cut out by hand simply never exists. (In fact, the drafting rules say never write "um" — TTS pronounces it as a word, and it sounds worse than no filler at all.)
-
-### A time limit you find out about *before* rendering
-
-This was the biggest one for me. My first draft written to a 3:30 target came in at **6:09 — 44% over** — and I couldn't tell by reading it.
-
-Now `init` gives you a character budget for your target length, and `check` tells you where you'll land before a single clip is generated:
+**Length is known up front.** You give a target length, and bowerbird gives you a character budget. `check` tells you where you'll land before anything is generated:
 
 ```
   ok    length               3:28.40 vs target 3:30 (-2s) @ 17.4 chars/s
 ```
 
-After each build, bowerbird re-measures your actual speaking rate and saves it, so the next estimate is sharper. The time limit stops being a hope and becomes a number you write to.
+After each build it re-measures your actual speaking rate, so estimates get more accurate over time.
 
-### Re-record one slide, not the whole video
-
-Clips are generated and cached per slide. One line sounds off? Redo just that one:
+**Small changes stay small.** Audio is generated and cached per slide. Change one slide, regenerate one slide:
 
 ```bash
-bowerbird build --slides 7,12    # re-roll those two, leave the rest alone
-bowerbird build --video-only     # tweak pacing, re-render in ~1 min, no TTS
+bowerbird build --slides 7,12    # redo just these
+bowerbird build --video-only     # adjust pacing, re-render in about a minute
 ```
 
-This is the exact thing the to-and-fro was missing. Re-recording used to cost me the whole video. Now it costs one slide.
-
-### Pacing is declared, not edited
-
-Each slide carries a `gap_after` in seconds — about 0.3 mid-thought, 0.5–0.65 at real transitions. That's the whole "edit."
-
-An earlier version tried to detect slide boundaries from the audio with silence detection. It was fragile, needed tuning, and once starved a four-word sentence down to 0.35 seconds of screen time. A number in a file is better.
+**It doesn't oversell.** If a slide is marked Planned, Roadmap, or Beta, `check` warns when the narration never says so. It's easy to present roadmap as shipped when you're writing to a time limit.
 
 ---
 
-## The Bits I Learned the Hard Way
+## Privacy
 
-A few rules are baked into the drafting prompt, each from getting it wrong:
+It's your voice, so it stays with you.
 
-- **Don't read the slide.** The viewer can read. Say what the slide doesn't.
-- **Write one continuous argument.** Each slide picks up where the last left off — *"And here's the scale…"*, *"But…"* — otherwise you get N announcements instead of a story.
-- **Spell numbers out.** "eight hundred sixty", not "860".
-- **Say when something isn't shipped yet.** If a slide says Planned, Roadmap, or Beta, `check` warns when the narration never hedges. Writing to a time budget makes it very easy to quietly present roadmap as shipped. I'd rather sound a bit stilted than oversell.
+- Voice cloning runs locally via [Voicebox](https://voicebox.sh). Nothing is uploaded.
+- The only network call is the optional `draft --llm`, which you have to ask for explicitly.
+- No Python dependencies — standard library only. Open source, MIT.
 
-And a couple of unglamorous ffmpeg details that make the output actually usable: loudness is normalized once across the whole video (per-clip normalization flattens delivery), only head and tail silence is trimmed (the pauses between sentences are breathing, not defects), and audio is pinned to 48 kHz so Slack, Drive, and Keynote don't choke on it.
-
----
-
-## On Privacy
-
-It's your voice. That's biometric data, and I didn't want it on anyone's server.
-
-- Voice cloning runs against Voicebox on `localhost`. Nothing is uploaded.
-- The only network call bowerbird makes is the optional `draft --llm`, which you have to ask for by name. Without it, `draft` just writes a prompt you can paste wherever you like.
-- No Python dependencies — standard library only.
-- Open source, MIT — [read every line](https://github.com/akshayeKS/bowerbird).
-
-If you're on a work laptop, check with your IT/security team before installing Voicebox. And remember that if your deck is confidential, your narration script is too.
+On a work laptop, check with your IT or security team before installing Voicebox. And if the deck is confidential, so is the script.
 
 ---
 
@@ -137,21 +114,13 @@ bowerbird init examples/demo-deck/deck.html --target 3:30
 bowerbird check   # tells you exactly what's missing
 ```
 
-Works with HTML, PDF, and `.pptx`/`.odp` decks (Keynote: export to PDF first). You need Python 3.11+ and ffmpeg.
+Works with HTML, PDF, and `.pptx`/`.odp` decks (Keynote: export to PDF first). Needs Python 3.11+ and ffmpeg.
+
+If you try it and something breaks, or it's missing what you need, DM me on [X (@akshayeKS)](https://x.com/akshayeKS).
 
 ---
 
-## Until I'm a Full-Time Video Editor
-
-bowerbird isn't trying to replace real video editing. It won't do B-roll, cuts to camera, or anything cinematic. It's for the 80% of videos that are really just *a deck and a clear explanation* — where the time I'd spend getting it crisp is better spent on the thing the deck is about.
-
-Set the time. Write the script. Record. Re-record the one slide that's off. Done.
-
-If you make deck videos and know the to-and-fro, give it a spin and tell me what breaks. DM me on [X (@akshayeKS)](https://x.com/akshayeKS).
-
----
-
-*Your deck, your voice. Less editing, more shipping.*
+*Your deck, your voice.*
 
 ---
 

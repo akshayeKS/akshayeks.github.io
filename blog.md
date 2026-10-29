@@ -12,10 +12,10 @@ Technical writeups on ML infrastructure, cost optimization, and lessons from pro
 
 ## 2026
 
-**[bowerbird: Narrated Deck Videos Without the Editing Loop](/blog/bowerbird/)** 🎙️
+**[bowerbird: Turn a Slide Deck into a Narrated Video, in Your Own Voice](/blog/bowerbird/)** 🎙️
 *October 2026*
 
-My constant to-and-fro chasing crisp recordings, replaced by a time-boxed, minimalist setup: a slide deck, a script, and my own cloned voice — re-record one slide, not the whole video. Fully local, open source.
+A small internal tool for anyone who explains things with slides: write the script, set the length, and get a narrated video in your own cloned voice — no recording sessions, no editing. Fully local, open source.
 
 **[callwiki: A Tool to Help Founders Stay Closer to Customers](/blog/callwiki/)** 🧠
 *April 2026*
